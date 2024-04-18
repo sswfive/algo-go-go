@@ -28,7 +28,7 @@ class Solution:
             i -= 1
         
         # 如果nums2有剩余，说明剩余元素全是比nums1小
-        if i2 >= 0:
+        while i2 >= 0:
             # nums1[: i2 + 1] = nums2[: i2 + 1]
             nums1[i] = nums2[i2]
             i2 -= 1
@@ -57,13 +57,6 @@ def test_merge(s):
     s.merge(nums1, m, nums2, n)
     assert nums1 == [1, 2, 3]
 
-    # nums1 = []
-    # m = 0
-    # nums2 = [1, 2, 3]
-    # n = 3
-    # s.merge(nums1, m, nums2, n)
-    # assert nums1 == [1, 2, 3]
-
     nums1 = []
     m = 0
     nums2 = []
@@ -71,8 +64,11 @@ def test_merge(s):
     s.merge(nums1, m, nums2, n)
     assert nums1 == []
 
+    nums1 = [0]
+    m = 0
+    nums2 = [3]
+    n = 1
+    s.merge(nums1, m, nums2, n)
+    assert nums1 == [3]
 
 
-
-
-    
